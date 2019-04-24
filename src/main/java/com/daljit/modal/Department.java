@@ -3,7 +3,7 @@ package com.daljit.modal;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "department", catalog = "test")
 public class Department {
 
     @Id

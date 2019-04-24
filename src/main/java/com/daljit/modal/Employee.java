@@ -3,7 +3,7 @@ package com.daljit.modal;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "employee")
+@Table(name = "employee", catalog = "test")
 public class Employee {
 
     @Id
@@ -15,6 +15,17 @@ public class Employee {
 
     @ManyToOne
     Department department;
+
+    @OneToOne
+    private Desk desk;
+
+    public Desk getDesk() {
+        return desk;
+    }
+
+    public void setDesk(Desk desk) {
+        this.desk = desk;
+    }
 
     public int getId() {
         return id;
